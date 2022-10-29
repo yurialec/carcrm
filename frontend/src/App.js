@@ -1,11 +1,28 @@
-import React from "react";
-import { Button } from '@material-ui/core';
+import * as React from 'react';
+import { createTheme, Select, TextField, ThemeProvider } from '@mui/material';
+import Button from '@mui/material/Button';
+import { green, red } from '@mui/material/colors';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: green[500],
+    },
+  },
+  MuiSelect: {
+    variant: 'outlined',
+    fullWidth: true
+  }
+});
 
 const App = () => (
-  <>
-    <h1>Aplicação React</h1>
-    <Button variant="contained">Hello World</Button>
-  </>
+  <ThemeProvider theme={theme}>
+    <TextField fullWidth variant='outlined'/>
+    <br/>
+    <Select></Select>
+    <br/>
+    <Button color="success">primary</Button>
+  </ThemeProvider>
 )
 
 export default App;
