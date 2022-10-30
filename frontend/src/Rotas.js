@@ -8,6 +8,7 @@ const Rotas = () => (
         <Router>
             <Switch>
                 <Route exact path="/" component={() => (<h1>Home</h1>)} />
+                <Route exact path="/cadastro" component={() => (<h1>Cadastro</h1>)} />
             </Switch>
         </Router>
         </Suspense>

@@ -1,4 +1,6 @@
-import * as React from 'react';
+import React from 'react';
+import { Provider } from 'react-redux'; 
+import { store } from './store/store';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { green, } from '@mui/material/colors';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,9 +19,11 @@ const theme = createTheme({
 });
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <Rotas />
-  </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Rotas />
+      </ThemeProvider>
+    </Provider>
 )
 
 export default App;
