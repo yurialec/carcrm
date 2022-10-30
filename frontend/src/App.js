@@ -1,7 +1,10 @@
-import * as React from 'react';
-import { createTheme, Select, TextField, ThemeProvider } from '@mui/material';
-import { green, red } from '@mui/material/colors';
+import React from 'react';
+import { Provider } from 'react-redux'; 
+import { store } from './store/store';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { green, } from '@mui/material/colors';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Rotas from './Rotas';
 
 const theme = createTheme({
   palette: {
@@ -16,9 +19,11 @@ const theme = createTheme({
 });
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <h1>Home</h1>
-  </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Rotas />
+      </ThemeProvider>
+    </Provider>
 )
 
 export default App;
