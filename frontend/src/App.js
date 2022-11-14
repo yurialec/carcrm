@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './global.css'
 import Rotas from './Rotas';
 
-import { Loading } from './view/components';
+import { Loading, Notify } from './view/components';
 
 const theme = createTheme({
   palette: {
@@ -24,6 +24,7 @@ const theme = createTheme({
 const App = () => (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
+        <Notify />
         <Loading />
         <Rotas />
       </ThemeProvider>
